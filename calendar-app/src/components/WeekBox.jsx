@@ -75,7 +75,7 @@ class WeekBox extends Component {
 
         let calendarMonths = utils.getCalendarMonths(this.props.startDate, this.props.days);
 
-        let calendarDays = [];//this.getCalendarDays(calendarMonths);
+        let calendarDays = this.getCalendarDays(calendarMonths);
 
         return <div className="weekbox-root">
             <div className="header-days-container">

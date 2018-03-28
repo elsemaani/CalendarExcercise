@@ -66,26 +66,26 @@ let utils = {
             if (cm.weekRows === undefined) {
                 cm.weekRows = [];
             }
-            // let daysArr = []; // week row days
-            // for (let i = 0, j = cm.startDay; i < cm.daysToRender; i++) {
-            //
-            //     let currDay = j+i; // render the day according to starting day
-            //     let tempDate = new Date(currDate.getFullYear(), currDate.getUTCMonth(), currDay);
-            //
-            //     daysArr.push(j+i);
-            //
-            //     if (tempDate.getDay() === DAY_NAMES.Saturday) {
-            //         // If day is the last of week (saturday) go to next row of week
-            //
-            //         cm.weekRows.push(daysArr);
-            //
-            //     }
-            //
-            //     if (currDay === cm.daysOfMonth) {
-            //         // if current day is last of month, no mor rows are needed for this month
-            //         break;
-            //     }
-            // }
+            let daysArr = []; // week row days
+            for (let i = 0, j = cm.startDay; i < cm.daysToRender; i++) {
+
+                let currDay = j+i; // render the day according to starting day
+                let tempDate = new Date(currDate.getFullYear(), currDate.getUTCMonth(), currDay);
+
+                daysArr.push(j+i);
+
+                if (tempDate.getDay() === DAY_NAMES.Saturday) {
+                    // If day is the last of week (saturday) go to next row of week
+
+                    cm.weekRows.push(daysArr);
+
+                }
+
+                if (currDay === cm.daysOfMonth) {
+                    // if current day is last of month, no mor rows are needed for this month
+                    break;
+                }
+            }
 
             calendarMonths.push(cm);
 
