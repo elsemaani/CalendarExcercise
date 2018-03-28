@@ -76,7 +76,7 @@ class Calendar extends Component {
             <div>Days {this.state.days}</div>
             <div>Code {this.state.code}</div>
 
-            <WeekBox weekFormat={'ss'}/>
+            <WeekBox weekFormat={'ss'} days={this.state.days} startDate={this.state.startDate}/>
 
         </div>
     }

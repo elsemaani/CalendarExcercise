@@ -25,4 +25,15 @@
   color: darkblue;
 }
 
+.days-row {
+
+}
+
+.day {
+  display: inline;
+  font-size: 1em;
+  padding: 5px;
+  color: darkblue;
+}
+
 
