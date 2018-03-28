@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="03d79eb5-3f34-40f1-87f2-4c165aa5a8f5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/calendar-app/src/components/Calendar.jsx" afterPath="$PROJECT_DIR$/calendar-app/src/components/Calendar.jsx" />
       <change beforePath="$PROJECT_DIR$/calendar-app/src/components/WeekBox.jsx" afterPath="$PROJECT_DIR$/calendar-app/src/components/WeekBox.jsx" />
+      <change beforePath="$PROJECT_DIR$/calendar-app/src/utils.jsx" afterPath="$PROJECT_DIR$/calendar-app/src/utils.jsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -40,14 +42,14 @@
       <file leaf-file-name="Calendar.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/calendar-app/src/components/Calendar.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="12" column="39" lean-forward="false" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+            <state relative-caret-position="270">
+              <caret line="69" column="43" lean-forward="true" selection-start-line="69" selection-start-column="43" selection-end-line="69" selection-end-column="43" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
-                <marker date="1522264801990" expanded="true" signature="1334:2397" ph="..." />
-                <marker date="1522264801990" expanded="true" signature="1420:1612" ph="..." />
-                <marker date="1522264801990" expanded="true" signature="1658:1862" ph="..." />
-                <marker date="1522264801990" expanded="true" signature="1908:2110" ph="..." />
+                <marker date="1522276082192" expanded="true" signature="1334:2407" ph="..." />
+                <marker date="1522276082192" expanded="true" signature="1420:1612" ph="..." />
+                <marker date="1522276082192" expanded="true" signature="1658:1862" ph="..." />
+                <marker date="1522276082192" expanded="true" signature="1908:2110" ph="..." />
               </folding>
             </state>
           </provider>
@@ -56,13 +58,13 @@
       <file leaf-file-name="WeekBox.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/calendar-app/src/components/WeekBox.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+            <state relative-caret-position="283">
+              <caret line="58" column="14" lean-forward="true" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
-                <marker date="1522275462625" expanded="true" signature="1902:2085" ph="..." />
-                <marker date="1522275462625" expanded="true" signature="1954:2002" ph="..." />
-                <marker date="1522275462625" expanded="true" signature="2020:2070" ph="..." />
+                <marker date="1522276233350" expanded="true" signature="1944:2127" ph="..." />
+                <marker date="1522276233350" expanded="true" signature="1996:2044" ph="..." />
+                <marker date="1522276233350" expanded="true" signature="2062:2112" ph="..." />
               </folding>
             </state>
           </provider>
@@ -81,8 +83,8 @@
       <file leaf-file-name="utils.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/calendar-app/src/utils.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="79" column="46" lean-forward="true" selection-start-line="79" selection-start-column="46" selection-end-line="79" selection-end-column="46" />
+            <state relative-caret-position="179">
+              <caret line="71" column="44" lean-forward="false" selection-start-line="71" selection-start-column="44" selection-end-line="71" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -133,8 +135,8 @@
       <list>
         <option value="$PROJECT_DIR$/calendar-app/src/App.js" />
         <option value="$PROJECT_DIR$/calendar-app/src/App.css" />
-        <option value="$PROJECT_DIR$/calendar-app/src/components/Calendar.jsx" />
         <option value="$PROJECT_DIR$/calendar-app/src/components/calendar.css" />
+        <option value="$PROJECT_DIR$/calendar-app/src/components/Calendar.jsx" />
         <option value="$PROJECT_DIR$/calendar-app/src/utils.jsx" />
         <option value="$PROJECT_DIR$/calendar-app/src/components/WeekBox.jsx" />
       </list>
@@ -242,12 +244,12 @@
       <option name="presentableId" value="Default" />
       <updated>1522251398325</updated>
       <workItem from="1522251399872" duration="19151000" />
-      <workItem from="1522272721330" duration="2511000" />
+      <workItem from="1522272721330" duration="3281000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21662000" />
+    <option name="totallyTimeSpent" value="22432000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="825" extended-state="6" />
@@ -333,20 +335,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/calendar-app/src/components/Calendar.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="39" lean-forward="false" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <marker date="1522264801990" expanded="true" signature="1334:2397" ph="..." />
-            <marker date="1522264801990" expanded="true" signature="1420:1612" ph="..." />
-            <marker date="1522264801990" expanded="true" signature="1658:1862" ph="..." />
-            <marker date="1522264801990" expanded="true" signature="1908:2110" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -363,23 +351,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/calendar-app/src/components/Calendar.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="69" column="43" lean-forward="true" selection-start-line="69" selection-start-column="43" selection-end-line="69" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <marker date="1522276082192" expanded="true" signature="1334:2407" ph="..." />
+            <marker date="1522276082192" expanded="true" signature="1420:1612" ph="..." />
+            <marker date="1522276082192" expanded="true" signature="1658:1862" ph="..." />
+            <marker date="1522276082192" expanded="true" signature="1908:2110" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/calendar-app/src/utils.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="79" column="46" lean-forward="true" selection-start-line="79" selection-start-column="46" selection-end-line="79" selection-end-column="46" />
+        <state relative-caret-position="179">
+          <caret line="71" column="44" lean-forward="false" selection-start-line="71" selection-start-column="44" selection-end-line="71" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/calendar-app/src/components/WeekBox.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+        <state relative-caret-position="283">
+          <caret line="58" column="14" lean-forward="true" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <marker date="1522275462625" expanded="true" signature="1902:2085" ph="..." />
-            <marker date="1522275462625" expanded="true" signature="1954:2002" ph="..." />
-            <marker date="1522275462625" expanded="true" signature="2020:2070" ph="..." />
+            <marker date="1522276233350" expanded="true" signature="1944:2127" ph="..." />
+            <marker date="1522276233350" expanded="true" signature="1996:2044" ph="..." />
+            <marker date="1522276233350" expanded="true" signature="2062:2112" ph="..." />
           </folding>
         </state>
       </provider>

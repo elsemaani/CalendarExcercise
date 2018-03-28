@@ -78,9 +78,9 @@ let utils = {
                     // If day is the last of week (saturday) go to next row of week
 
                     cm.weekRows.push(daysArr);
-
                 }
 
+                // TODO: currDay is not reaching the last day of month
                 if (currDay === cm.daysOfMonth) {
                     // if current day is last of month, no mor rows are needed for this month
                     break;

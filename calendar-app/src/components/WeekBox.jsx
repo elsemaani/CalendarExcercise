@@ -47,13 +47,13 @@ class WeekBox extends Component {
         // year, month, startDay, daysOfMonth, daysToRender
         let result = calendarMonths.map((cm) => {
 
-            let rows = cm.weekRows && cm.weekRows.map((daysArr) => {
+            let rows = cm.weekRows && cm.weekRows.map((daysArr, rIndex) => {
 
-                let fields = daysArr && daysArr.map((day) => {
-                    return <div className="day">{day}</div>;
+                let fields = daysArr && daysArr.map((day, fIndex) => {
+                    return <div key={fIndex} className="day">{day}</div>;
                 });
 
-                return (<div className="days-row">
+                return (<div key={rIndex} className="days-row">
                     {fields}
                 </div>)
             })
