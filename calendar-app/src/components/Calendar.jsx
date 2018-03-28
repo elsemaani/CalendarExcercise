@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import utils from '../utils.jsx';
+import WeekBox from './WeekBox.jsx';
 import './calendar.css';
 
 class Calendar extends Component {
@@ -8,7 +10,7 @@ class Calendar extends Component {
         super(props);
 
         // initial date
-        let defaultDate = this.getDateValue(new Date());
+        let defaultDate = utils.getDateValue(new Date());
 
         this.state = {
             startDate: defaultDate,
@@ -26,16 +28,6 @@ class Calendar extends Component {
     };
 
     componentDidMount() {
-    }
-
-    getDateValue(date) {
-
-        if (!date) {
-            return '';
-        }
-
-        let dtValue = date.toISOString().substring(0, 10);
-        return dtValue;
     }
 
     updateDays(e) {
@@ -83,6 +75,8 @@ class Calendar extends Component {
             <div>Date {startDateValue}</div>
             <div>Days {this.state.days}</div>
             <div>Code {this.state.code}</div>
+
+            <WeekBox weekFormat={'ss'}/>
 
         </div>
     }

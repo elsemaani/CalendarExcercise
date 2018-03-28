@@ -10,4 +10,19 @@
   color: blue;
 }
 
+.weekbox-root {
+  margin-top: 10px;
+}
+
+.header-days-container {
+  /*border: darkblue 1px solid;*/
+}
+
+.header-day {
+  display: inline;
+  font-size: 1em;
+  padding: 5px;
+  color: darkblue;
+}
+
 
