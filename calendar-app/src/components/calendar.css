@@ -10,8 +10,16 @@
   color: blue;
 }
 
-.weekbox-root {
+.week-root {
   margin-top: 10px;
+}
+
+.month-header {
+  text-align: center;
+  width: 210px;
+  display: inline-block;
+  background-color: lightyellow;
+  padding: 2px;
 }
 
 .header-days-container {
@@ -24,6 +32,7 @@
   min-width: 20px;
   width: 20px;
   padding: 5px;
+  border: white 0.5px solid;
 }
 
 .header-day {
@@ -33,14 +42,16 @@
 .days-row {
 }
 
-.day {
-  color: blue;
-  background-color: aquamarine;
+.weekend {
+  background-color: yellow;
+}
+
+.weekday {
+  background-color: green;
 }
 
 .day-invalid {
-  color: darkgray;
-  background-color: gray;
+  background-color: lightgrey;
 }
 
 

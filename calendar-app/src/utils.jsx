@@ -93,7 +93,7 @@ let utils = {
         // must to render the necessary months
         let calendarMonths = [];
 
-        let daysLeft = days;
+        let totalDaysLeft = days;
         let daysAvailable = true;
 
         do { // each iteration corresponds to one month
@@ -102,22 +102,30 @@ let utils = {
             let dayOfMonth = currDate.getDate();
 
             // compute the days left according to current month
-            let daysLeftInMonth = Math.abs(daysOfMonth - dayOfMonth); // 31 - 365 = 334
-
-            // Verify if days are left
-            if (daysLeft >= daysLeftInMonth) {
-                daysLeft -= daysLeftInMonth;
-            } else {
-                daysAvailable = false; // no more available days.
-            };
+            let daysLeftInMonth = Math.abs(daysOfMonth - dayOfMonth); // 31 - 29 = 2
 
             let cm = {
                 year: currDate.getFullYear(),
                 month: currDate.getUTCMonth(), // from 0-11
                 startDay: dayOfMonth,
                 daysOfMonth: daysOfMonth,
-                daysToRender: daysLeft,
+                daysToRender: daysLeftInMonth // totalDaysLeft // days rendered for this month
             };
+
+            // Verify if days are left
+            if (totalDaysLeft > daysLeftInMonth) {
+                totalDaysLeft -= daysLeftInMonth;
+                // Subtract month daysLeft from total daysLeft
+                // let daysLeftTemp = (daysLeft - daysLeftInMonth);
+                // if (daysLeftTemp > 0) {
+                //     // if daysLeft greater than 0, we update the daysToRender, otherwise we keep the original daysLeft;
+                //     cm.daysToRender = daysLeftTemp;
+                // }
+                //daysLeft = daysLeftTemp;
+            } else {
+                daysAvailable = false; // no more available days.
+                cm.daysToRender = totalDaysLeft; // because daysLeft are less than month left
+            }
 
             // complete the month information
             cm.monthTitle = this.getMonthName(cm.month);
@@ -125,7 +133,7 @@ let utils = {
             if (cm.weekRows === undefined) {
                 cm.weekRows = [];
             }
-            cm.weekRows.push()
+
             let daysArr = []; // week row days
 
             let tempCurrDate = new Date(currDate.getFullYear(), currDate.getUTCMonth(), cm.startDay);
@@ -140,37 +148,66 @@ let utils = {
                 }
             }
 
-            for (let i = 0; i < cm.daysToRender; i++) {
+            let noWeekDone = false;
+            for (let j = 0; j < cm.daysToRender; j++) {
 
                 if (!daysAvailable) {
-                    // If no mor available days for more months, we start to decrease daysLeft
-                    daysLeft--;
+                    // If no more available days for more months, we start to decrease daysLeft
+                    totalDaysLeft--;
                 }
 
-                let currDay = cm.startDay + i;
+                let currDay = cm.startDay + j;
                 let newDay = this.createDay(currDate, currDay, false);
                 daysArr.push(newDay);
 
+
+                let weekDone = false;
                 if (newDay.dayInWeek === DAY_NAMES.Saturday) {
-                    // If day is the last of week (saturday) go to next row of week and initialize array
+                    // go to next row if:
+                        // day is the last of week (saturday)
+                        // current day is last of month or last of week
+                        // no more days are available, no more rows are needed
                     let newDaysArr = daysArr.map((d) => {return d});
                     cm.weekRows.push(newDaysArr);
                     daysArr = [];
+                    weekDone = true;
                 }
 
                 // complete empty days of week
                 // if current day is last of month or last of week and no more days are available, no more rows are needed
-                if (currDay === cm.daysOfMonth || daysLeft <= 0) {
-                    break;
+                if (currDay === cm.daysOfMonth || totalDaysLeft <= 0) {
+                // if (currDay === cm.daysOfMonth) {
+                    if (!weekDone) {
+                        let newDaysArr = daysArr.map((d) => {return d});
+                        cm.weekRows.push(newDaysArr);
+                        daysArr = [];
+                    }
+                    if (currDay === cm.daysOfMonth) {
+                        // break only if it is the last day of month
+                        // TODO: complete invalid days week if necessary
+                        break;
+                    }
                 }
             }
+
+            if (!cm.weekRows.length && daysArr.length) {
+                // No week was completed, must to create one
+                let newDaysArr = daysArr.map((d) => {return d});
+                cm.weekRows.push(newDaysArr);
+                daysArr = [];
+            }
+
+            // if (totalDaysLeft >= daysLeftInMonth) {
+            //     // Subtract month daysLeft from total daysLeft
+            //     totalDaysLeft -= daysLeftInMonth;
+            // }
 
             calendarMonths.push(cm);
 
             // increase the date to next month starting from first day
             currDate = new Date(currDate.getFullYear(), currDate.getUTCMonth() + 1, 1);
         }
-        while (daysLeft > 0 && daysAvailable);
+        while (totalDaysLeft > 0 && daysAvailable);
 
         console.log(calendarMonths);
 

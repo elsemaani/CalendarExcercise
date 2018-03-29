@@ -44,17 +44,21 @@ class WeekBox extends Component {
             return;
         }
 
+        let invalidClass = "day-box day-invalid";
+        let validClass = "day-box";
+
         // year, month, startDay, daysOfMonth, daysToRender
         let result = calendarMonths.map((cm, mIndex) => {
 
             let rows = cm.weekRows && cm.weekRows.map((daysArr, rIndex) => {
 
                 let fields = daysArr && daysArr.map((day, fIndex) => {
+                    let dayStyle = day.weekend ? `weekend` : `weekday`;
                     return (
-                        day.invalid === true ?
-                            <div key={fIndex} className="day-box day-invalid">{day.day}</div>
+                        day.invalid ?
+                            <div key={fIndex} className={`${dayStyle} ${invalidClass}`}>{day.day}</div>
                             :
-                            <div key={fIndex} className="day-box day">{day.day}</div>
+                            <div key={fIndex} className={`${dayStyle} ${validClass}`}>{day.day}</div>
                     );
                 });
 
@@ -65,7 +69,7 @@ class WeekBox extends Component {
 
             return (
                 <div key={mIndex}>
-                    <div>{cm.monthTitle}</div>
+                    <div className="month-header">{cm.monthTitle}</div>
                     {rows}
                 </div>
             )
@@ -82,7 +86,7 @@ class WeekBox extends Component {
 
         let calendarDays = this.getCalendarDays(calendarMonths);
 
-        return <div className="weekbox-root">
+        return <div className="week-root">
             <div className="header-days-container">
                 {headerDays}
             </div>
