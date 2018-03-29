@@ -85,7 +85,41 @@ let utils = {
         };
     },
 
-    // create an object with data computed to render each month with corresponding weeks and days
+    fillInvalidPrevDays(daysArr, currDate, day) {
+
+        let tempCurrDate = new Date(currDate.getFullYear(), currDate.getUTCMonth(), day);
+        let prevEmptyDays = tempCurrDate.getDay() - DAY_NAMES.Sunday;
+        // initialize array with empty/invalid days (if required)
+        if (prevEmptyDays > 0) {
+            let startDay = day > prevEmptyDays ? (day - prevEmptyDays) : 0;
+            for (let i = 0; i < prevEmptyDays; i++) {
+
+                let newDay = this.createDay(currDate, startDay + i, true);
+                daysArr.push(newDay);
+            }
+        }
+        return daysArr;
+    },
+
+    fillInvalidPostDays(daysArr, currDate, day) {
+
+        // verify if need to complete invalid days in week
+        let tempCurrDate = new Date(currDate.getFullYear(), currDate.getUTCMonth(), day);
+        let emptyDays = DAY_NAMES.Saturday - tempCurrDate.getDay();
+        // complete array with empty/invalid days (if required)
+        if (emptyDays > 0) {
+            //let startDay = day > emptyDays ? (cm.startDay - emptyDays) : 0;
+            for (let i = 0; i < emptyDays; i++) {
+
+                let newDay = this.createDay(currDate, emptyDays + i, true);
+                daysArr.push(newDay);
+            }
+        }
+
+        return daysArr;
+    },
+
+    // create an object with computed data to render each month with corresponding weeks and days
     getCalendarMonths(startDate, days) {
 
         let currDate = utils.getDateFromStr(startDate);
@@ -129,17 +163,7 @@ let utils = {
 
             let daysArr = []; // week row days
 
-            let tempCurrDate = new Date(currDate.getFullYear(), currDate.getUTCMonth(), cm.startDay);
-            let prevEmptyDays = tempCurrDate.getDay() - DAY_NAMES.Sunday;
-            // initialize array with empty/invalid days (if required)
-            if (prevEmptyDays > 0) {
-                let startDay = cm.startDay > prevEmptyDays ? (cm.startDay - prevEmptyDays) : 0;
-                for (let i = 0; i < prevEmptyDays; i++) {
-
-                    let newDay = this.createDay(currDate, startDay + i, true);
-                    daysArr.push(newDay);
-                }
-            }
+            daysArr = this.fillInvalidPrevDays(daysArr,currDate, cm.startDay);
 
             let currDay = 0;
             for (let j = 0; j < cm.daysToRender; j++) {
@@ -162,7 +186,7 @@ let utils = {
                         // no more days are available, no more rows are needed
                     let newDaysArr = daysArr.map((d) => {return d});
                     // complete empty days of week
-                    newDaysArr = this.completeInvalidDays(newDaysArr, currDate, currDay);
+                    newDaysArr = this.fillInvalidPostDays(newDaysArr, currDate, currDay);
                     cm.weekRows.push(newDaysArr);
                     daysArr = [];
                     weekDone = true;
@@ -175,7 +199,7 @@ let utils = {
                     if (!weekDone) {
                         let newDaysArr = daysArr.map((d) => {return d});
                         // complete empty days of week
-                        newDaysArr = this.completeInvalidDays(newDaysArr, currDate, currDay);
+                        newDaysArr = this.fillInvalidPostDays(newDaysArr, currDate, currDay);
                         cm.weekRows.push(newDaysArr);
                         daysArr = [];
                     }
@@ -187,11 +211,12 @@ let utils = {
                 }
             }
 
+            // If no week row was completed, must to create it
             if (!cm.weekRows.length && daysArr.length) {
-                // No week was completed, must to create one
+
                 let newDaysArr = daysArr.map((d) => {return d});
                 // complete empty days of week
-                newDaysArr = this.completeInvalidDays(newDaysArr, currDate, currDay);
+                newDaysArr = this.fillInvalidPostDays(newDaysArr, currDate, currDay);
                 cm.weekRows.push(newDaysArr);
                 daysArr = [];
             }
@@ -206,25 +231,6 @@ let utils = {
         console.log(calendarMonths);
 
         return calendarMonths;
-    },
-
-    completeInvalidDays(daysArr, currDate, day) {
-
-        // verify if need to complete invalid days in week
-        let tempCurrDate = new Date(currDate.getFullYear(), currDate.getUTCMonth(), day);
-        let emptyDays = DAY_NAMES.Saturday - tempCurrDate.getDay();
-        // complete array with empty/invalid days (if required)
-        if (emptyDays > 0) {
-            //let startDay = day > emptyDays ? (cm.startDay - emptyDays) : 0;
-            for (let i = 0; i < emptyDays; i++) {
-
-                let newDay = this.createDay(currDate, emptyDays + i, true);
-                daysArr.push(newDay);
-            }
-        }
-
-        return daysArr;
-
     }
 };
 

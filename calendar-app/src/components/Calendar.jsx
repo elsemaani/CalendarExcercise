@@ -51,7 +51,7 @@ class Calendar extends Component {
         console.log('Local date:', localDateValue);
 
         return <div className="calendar-root">
-            <h1>Calendar Component</h1>
+            <h2>Calendar - Jean Paul El Semaani</h2>
             <div className="input-container">
                 <label className="left-label">{'Start Date:'}</label>
                 <input type="date" value={this.state.startDate} onChange={(e)=> this.updateDate(e)} />
