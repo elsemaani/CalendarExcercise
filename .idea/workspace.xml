@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="03d79eb5-3f34-40f1-87f2-4c165aa5a8f5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/calendar-app/src/components/Calendar.jsx" afterPath="$PROJECT_DIR$/calendar-app/src/components/Calendar.jsx" />
-      <change beforePath="$PROJECT_DIR$/calendar-app/src/components/WeekBox.jsx" afterPath="$PROJECT_DIR$/calendar-app/src/components/WeekBox.jsx" />
-      <change beforePath="$PROJECT_DIR$/calendar-app/src/components/calendar.css" afterPath="$PROJECT_DIR$/calendar-app/src/components/calendar.css" />
       <change beforePath="$PROJECT_DIR$/calendar-app/src/utils.jsx" afterPath="$PROJECT_DIR$/calendar-app/src/utils.jsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -56,10 +53,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WeekBox.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WeekBox.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/calendar-app/src/components/WeekBox.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
+            <state relative-caret-position="675">
               <caret line="67" column="74" lean-forward="false" selection-start-line="67" selection-start-column="74" selection-end-line="67" selection-end-column="74" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
@@ -83,11 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils.jsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="utils.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/calendar-app/src/utils.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="104" column="73" lean-forward="false" selection-start-line="104" selection-start-column="73" selection-end-line="104" selection-end-column="73" />
+            <state relative-caret-position="298">
+              <caret line="198" column="36" lean-forward="true" selection-start-line="198" selection-start-column="36" selection-end-line="198" selection-end-column="36" />
               <folding>
                 <element signature="e#875#1234#0" expanded="false" />
               </folding>
@@ -153,10 +150,10 @@
       <list>
         <option value="$PROJECT_DIR$/calendar-app/src/App.js" />
         <option value="$PROJECT_DIR$/calendar-app/src/App.css" />
-        <option value="$PROJECT_DIR$/calendar-app/src/utils.jsx" />
         <option value="$PROJECT_DIR$/calendar-app/src/components/Calendar.jsx" />
         <option value="$PROJECT_DIR$/calendar-app/src/components/calendar.css" />
         <option value="$PROJECT_DIR$/calendar-app/src/components/WeekBox.jsx" />
+        <option value="$PROJECT_DIR$/calendar-app/src/utils.jsx" />
       </list>
     </option>
   </component>
@@ -263,12 +260,12 @@
       <updated>1522251398325</updated>
       <workItem from="1522251399872" duration="19151000" />
       <workItem from="1522272721330" duration="4396000" />
-      <workItem from="1522303707323" duration="20073000" />
+      <workItem from="1522303707323" duration="21251000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43620000" />
+    <option name="totallyTimeSpent" value="44798000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="825" extended-state="6" />
@@ -451,16 +448,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/calendar-app/src/utils.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="104" column="73" lean-forward="false" selection-start-line="104" selection-start-column="73" selection-end-line="104" selection-end-column="73" />
-          <folding>
-            <element signature="e#875#1234#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/calendar-app/src/components/Calendar.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -485,7 +472,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/calendar-app/src/components/WeekBox.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
+        <state relative-caret-position="675">
           <caret line="67" column="74" lean-forward="false" selection-start-line="67" selection-start-column="74" selection-end-line="67" selection-end-column="74" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
@@ -494,6 +481,16 @@
             <marker date="1522365129483" expanded="true" signature="2378:2561" ph="..." />
             <marker date="1522365129483" expanded="true" signature="2430:2478" ph="..." />
             <marker date="1522365129483" expanded="true" signature="2496:2546" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calendar-app/src/utils.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="198" column="36" lean-forward="true" selection-start-line="198" selection-start-column="36" selection-end-line="198" selection-end-column="36" />
+          <folding>
+            <element signature="e#875#1234#0" expanded="false" />
           </folding>
         </state>
       </provider>
