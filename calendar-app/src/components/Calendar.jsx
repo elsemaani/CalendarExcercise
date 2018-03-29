@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import utils from '../utils.jsx';
 import WeekBox from './WeekBox.jsx';
 import './calendar.css';
@@ -20,12 +19,6 @@ class Calendar extends Component {
 
         //this.updateDays = this.updateDays.bind(this);
     }
-
-    static defaultProps = {
-    };
-
-    static propTypes = {
-    };
 
     componentDidMount() {
     }
@@ -48,8 +41,6 @@ class Calendar extends Component {
 
     // TODO: optionally, parse date from user input string 'mm/dd/yyyy'
 
-
-
     render() {
 
         let startDate = utils.getDateFromStr(this.state.startDate);
@@ -59,7 +50,7 @@ class Calendar extends Component {
         console.log('Date obj:', startDate);
         console.log('Local date:', localDateValue);
 
-        return <div>
+        return <div className="calendar-root">
             <h1>Calendar Component</h1>
             <div className="input-container">
                 <label className="left-label">{'Start Date:'}</label>
@@ -74,10 +65,11 @@ class Calendar extends Component {
                 <input type="text" value={this.state.code} onChange={(e)=> this.updateTextField('code', e)} />
             </div>
 
-            <h2>Data selected</h2>
-            <div>Date {localDateValue}</div>
-            <div>Days {this.state.days}</div>
-            <div>Code {this.state.code}</div>
+            {/* Controls to verify input data*/}
+            {/*<h2>Data selected</h2>*/}
+            {/*<div>Date {localDateValue}</div>*/}
+            {/*<div>Days {this.state.days}</div>*/}
+            {/*<div>Code {this.state.code}</div>*/}
 
             <WeekBox weekFormat={'ss'} days={parseInt(this.state.days)} startDate={this.state.startDate}/>
 

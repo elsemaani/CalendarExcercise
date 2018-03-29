@@ -101,8 +101,8 @@ let utils = {
             let daysOfMonth = this.daysInMonth(currDate.getMonth() + 1, currDate.getFullYear()); // last day of month
             let dayOfMonth = currDate.getDate();
 
-            // compute the days left according to current month
-            let daysLeftInMonth = Math.abs(daysOfMonth - dayOfMonth); // 31 - 29 = 2
+            // compute the days left according to current month, minus 1 to include initial day
+            let daysLeftInMonth = Math.abs(daysOfMonth - (dayOfMonth - 1)); // 31 - 29 = 2
 
             let cm = {
                 year: currDate.getFullYear(),
@@ -115,13 +115,6 @@ let utils = {
             // Verify if days are left
             if (totalDaysLeft > daysLeftInMonth) {
                 totalDaysLeft -= daysLeftInMonth;
-                // Subtract month daysLeft from total daysLeft
-                // let daysLeftTemp = (daysLeft - daysLeftInMonth);
-                // if (daysLeftTemp > 0) {
-                //     // if daysLeft greater than 0, we update the daysToRender, otherwise we keep the original daysLeft;
-                //     cm.daysToRender = daysLeftTemp;
-                // }
-                //daysLeft = daysLeftTemp;
             } else {
                 daysAvailable = false; // no more available days.
                 cm.daysToRender = totalDaysLeft; // because daysLeft are less than month left
@@ -148,7 +141,6 @@ let utils = {
                 }
             }
 
-            let noWeekDone = false;
             for (let j = 0; j < cm.daysToRender; j++) {
 
                 if (!daysAvailable) {

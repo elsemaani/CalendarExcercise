@@ -28,10 +28,6 @@ class WeekBox extends Component {
     componentDidMount() {
     }
 
-    renderMonth(days) {
-
-    }
-
     getHeaderDays() {
         return (DAYS.map((d, index)=> {
             return <div key={index} className="day-box header-day">{d}</div>;
@@ -56,7 +52,7 @@ class WeekBox extends Component {
                     let dayStyle = day.weekend ? `weekend` : `weekday`;
                     return (
                         day.invalid ?
-                            <div key={fIndex} className={`${dayStyle} ${invalidClass}`}>{day.day}</div>
+                            <div key={fIndex} className={`${dayStyle} ${invalidClass}`}>{0}</div>
                             :
                             <div key={fIndex} className={`${dayStyle} ${validClass}`}>{day.day}</div>
                     );
@@ -69,7 +65,7 @@ class WeekBox extends Component {
 
             return (
                 <div key={mIndex}>
-                    <div className="month-header">{cm.monthTitle}</div>
+                    <div className="month-header">{cm.monthTitle} {cm.year}</div>
                     {rows}
                 </div>
             )
