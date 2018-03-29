@@ -34,7 +34,7 @@ class WeekBox extends Component {
 
     getHeaderDays() {
         return (DAYS.map((d, index)=> {
-            return <div key={index} className="header-day">{d}</div>;
+            return <div key={index} className="day-box header-day">{d}</div>;
         }))
     }
 
@@ -45,12 +45,17 @@ class WeekBox extends Component {
         }
 
         // year, month, startDay, daysOfMonth, daysToRender
-        let result = calendarMonths.map((cm) => {
+        let result = calendarMonths.map((cm, mIndex) => {
 
             let rows = cm.weekRows && cm.weekRows.map((daysArr, rIndex) => {
 
                 let fields = daysArr && daysArr.map((day, fIndex) => {
-                    return <div key={fIndex} className="day">{day}</div>;
+                    return (
+                        day.invalid === true ?
+                            <div key={fIndex} className="day-box day-invalid">{day.day}</div>
+                            :
+                            <div key={fIndex} className="day-box day">{day.day}</div>
+                    );
                 });
 
                 return (<div key={rIndex} className="days-row">
@@ -59,7 +64,7 @@ class WeekBox extends Component {
             })
 
             return (
-                <div>
+                <div key={mIndex}>
                     <div>{cm.monthTitle}</div>
                     {rows}
                 </div>

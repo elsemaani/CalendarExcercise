@@ -10,12 +10,12 @@ class Calendar extends Component {
         super(props);
 
         // initial date
-        let defaultDate = utils.getDateValue(new Date());
+        let defaultDate = utils.getISODateValue(utils.getUtcDate());
 
         this.state = {
             startDate: defaultDate,
             days: 15,
-            code: ''
+            code: 'US'
         };
 
         //this.updateDays = this.updateDays.bind(this);
@@ -52,9 +52,12 @@ class Calendar extends Component {
 
     render() {
 
-        let startDateValue = new Date(this.state.startDate).toLocaleDateString();
-        console.log(this.state.startDate);
-        console.log(startDateValue);
+        let startDate = utils.getDateFromStr(this.state.startDate);
+        let localDateValue = startDate.toLocaleDateString(this.state.code); // new Date(Date.UTC(locDate.getFullYear(), locDate.getUTCMonth(), locDate.getDate()));
+
+        console.log('Input date:', this.state.startDate);
+        console.log('Date obj:', startDate);
+        console.log('Local date:', localDateValue);
 
         return <div>
             <h1>Calendar Component</h1>
@@ -72,7 +75,7 @@ class Calendar extends Component {
             </div>
 
             <h2>Data selected</h2>
-            <div>Date {startDateValue}</div>
+            <div>Date {localDateValue}</div>
             <div>Days {this.state.days}</div>
             <div>Code {this.state.code}</div>
 

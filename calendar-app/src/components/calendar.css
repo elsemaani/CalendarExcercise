@@ -18,22 +18,29 @@
   /*border: darkblue 1px solid;*/
 }
 
-.header-day {
-  display: inline;
+.day-box {
+  display: inline-block;
   font-size: 1em;
+  min-width: 20px;
+  width: 20px;
   padding: 5px;
+}
+
+.header-day {
   color: darkblue;
 }
 
 .days-row {
-
 }
 
 .day {
-  display: inline;
-  font-size: 1em;
-  padding: 5px;
-  color: darkblue;
+  color: blue;
+  background-color: aquamarine;
+}
+
+.day-invalid {
+  color: darkgray;
+  background-color: gray;
 }
 
 
